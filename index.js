@@ -384,7 +384,7 @@ function min(arr) {
 console.log("");
 console.log(`# ${runs} runs of ${arrLength} items`);
 console.log("");
-console.log(`## Integer Array`);
+console.log(`### Integer Array`);
 console.log(`
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -397,7 +397,7 @@ console.log(`
 | forEach | ${average(forEachTiming).toFixed(4)} | ${max(forEachTiming).toFixed(4)} | ${min(forEachTiming).toFixed(4)} |
 `);
 console.log("");
-console.log(`## Object Array`);
+console.log(`### Object Array`);
 console.log(`
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -410,7 +410,7 @@ console.log(`
 | forEach | ${average(forEachObjectTiming).toFixed(4)} | ${max(forEachObjectTiming).toFixed(4)} | ${min(forEachObjectTiming).toFixed(4)} |
 `);
 console.log("");
-console.log(`## Global Integer Array`);
+console.log(`### Global Integer Array`);
 console.log(`
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -423,7 +423,7 @@ console.log(`
 | forEach | ${average(forEachGlobalTiming).toFixed(4)} | ${max(forEachGlobalTiming).toFixed(4)} | ${min(forEachGlobalTiming).toFixed(4)} |
 `);
 console.log("");
-console.log(`## Global Object Array`);
+console.log(`### Global Object Array`);
 console.log(`
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |

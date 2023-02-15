@@ -47,7 +47,7 @@ My findings:
 
 # 100 runs of 10 items
 
-## Integer Array
+### Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -60,7 +60,7 @@ My findings:
 | forEach | 0.0016 | 0.0588 | 0.0005 |
 
 
-## Object Array
+### Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -73,7 +73,7 @@ My findings:
 | forEach | 0.0012 | 0.0429 | 0.0006 |
 
 
-## Global Integer Array
+### Global Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -86,7 +86,7 @@ My findings:
 | forEach | 0.0010 | 0.0420 | 0.0005 |
 
 
-## Global Object Array
+### Global Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -100,7 +100,7 @@ My findings:
 
 # 100 runs of 100 items
 
-## Integer Array
+### Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -113,7 +113,7 @@ My findings:
 | forEach | 0.0042 | 0.0435 | 0.0011 |
 
 
-## Object Array
+### Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -126,7 +126,7 @@ My findings:
 | forEach | 0.0109 | 0.6777 | 0.0012 |
 
 
-## Global Integer Array
+### Global Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -139,7 +139,7 @@ My findings:
 | forEach | 0.0035 | 0.0285 | 0.0010 |
 
 
-## Global Object Array
+### Global Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -153,7 +153,7 @@ My findings:
 
 # 100 runs of 1000 items
 
-## Integer Array
+### Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -166,7 +166,7 @@ My findings:
 | forEach | 0.0167 | 0.0952 | 0.0109 |
 
 
-## Object Array
+### Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -179,7 +179,7 @@ My findings:
 | forEach | 0.0191 | 0.0756 | 0.0117 |
 
 
-## Global Integer Array
+### Global Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -192,7 +192,7 @@ My findings:
 | forEach | 0.0155 | 0.0804 | 0.0106 |
 
 
-## Global Object Array
+### Global Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -206,7 +206,7 @@ My findings:
 
 # 100 runs of 10000 items
 
-## Integer Array
+### Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -219,7 +219,7 @@ My findings:
 | forEach | 0.1371 | 0.4226 | 0.1127 |
 
 
-## Object Array
+### Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -232,7 +232,7 @@ My findings:
 | forEach | 0.2625 | 2.4582 | 0.1317 |
 
 
-## Global Integer Array
+### Global Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -245,7 +245,7 @@ My findings:
 | forEach | 0.1649 | 2.0752 | 0.1136 |
 
 
-## Global Object Array
+### Global Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -259,7 +259,7 @@ My findings:
 
 # 100 runs of 100000 items
 
-## Integer Array
+### Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -272,7 +272,7 @@ My findings:
 | forEach | 2.0547 | 8.9200 | 1.3186 |
 
 
-## Object Array
+### Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -285,7 +285,7 @@ My findings:
 | forEach | 2.3527 | 11.5165 | 1.5008 |
 
 
-## Global Integer Array
+### Global Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -298,7 +298,7 @@ My findings:
 | forEach | 1.5378 | 7.9669 | 1.3353 |
 
 
-## Global Object Array
+### Global Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -312,7 +312,7 @@ My findings:
 
 # 100 runs of 1000000 items
 
-## Integer Array
+### Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -325,7 +325,7 @@ My findings:
 | forEach | 18.9217 | 44.0161 | 16.6310 |
 
 
-## Object Array
+### Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -338,7 +338,7 @@ My findings:
 | forEach | 18.2457 | 47.8687 | 15.7463 |
 
 
-## Global Integer Array
+### Global Integer Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
@@ -351,7 +351,7 @@ My findings:
 | forEach | 30.9202 | 302.2497 | 19.8651 |
 
 
-## Global Object Array
+### Global Object Array
 
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
