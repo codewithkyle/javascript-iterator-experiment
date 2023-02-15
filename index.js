@@ -1,10 +1,10 @@
 let runs = 100;
 let arrLength = 100_000;
 
-if (process?.argv?.length > 2) {
+if (typeof process !== "undefined" && process?.argv?.length > 2) {
     runs = parseInt(process.argv[2]);
     arrLength = parseInt(process.argv[3]);
-} else if (window?.location?.search) {
+} else if (typeof window !== "undefined" && window?.location?.search) {
     const params = new URLSearchParams(window.location.search);
     runs = parseInt(params.get("runs"));
     arrLength = parseInt(params.get("arrLength"));
