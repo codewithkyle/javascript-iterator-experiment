@@ -361,3 +361,104 @@ My findings:
 | Map | 24.1846 | 34.4497 | 19.4718 |
 | Filter | 22.8034 | 28.9696 | 19.3658 |
 | forEach | 20.2917 | 60.6871 | 17.0919 |
+
+# 100 runs of 100000 items (Chrome)
+
+### Integer Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 0.7250 | 3.9000 | 0.4000 |
+| Preallocated For Loop | 0.6220 | 3.2000 | 0.4000 |
+| Reverse For Loop | 0.7930 | 3.4000 | 0.4000 |
+| For Of Loop | 0.8200 | 6.3000 | 0.4000 |
+| Map | 1.3290 | 2.0000 | 1.2000 |
+| Filter | 1.5300 | 3.7000 | 1.2000 |
+| forEach | 1.3980 | 3.9000 | 1.1000 |
+
+### Object Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 1.0490 | 4.5000 | 0.6000 |
+| Preallocated For Loop | 0.7910 | 3.7000 | 0.5000 |
+| Reverse For Loop | 0.9750 | 3.6000 | 0.6000 |
+| For Of Loop | 1.0310 | 6.3000 | 0.6000 |
+| Map | 1.4750 | 3.4000 | 1.3000 |
+| Filter | 1.7740 | 10.2000 | 1.3000 |
+| forEach | 1.7740 | 22.9000 | 1.2000 |
+
+### Global Integer Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 0.8720 | 6.0000 | 0.4000 |
+| Preallocated For Loop | 0.6320 | 4.3000 | 0.4000 |
+| Reverse For Loop | 0.7760 | 3.5000 | 0.5000 |
+| For Of Loop | 0.9180 | 6.4000 | 0.5000 |
+| Map | 1.3760 | 2.6000 | 1.2000 |
+| Filter | 1.5330 | 4.1000 | 1.2000 |
+| forEach | 1.3310 | 3.4000 | 1.1000 |
+
+### Global Object Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 1.0690 | 6.3000 | 0.6000 |
+| Preallocated For Loop | 0.8230 | 4.2000 | 0.6000 |
+| Reverse For Loop | 0.9740 | 3.8000 | 0.6000 |
+| For Of Loop | 1.0060 | 5.6000 | 0.7000 |
+| Map | 1.4780 | 4.5000 | 1.2000 |
+| Filter | 1.6640 | 4.1000 | 1.4000 |
+| forEach | 1.5340 | 4.1000 | 1.2000 |
+
+
+# 100 runs of 100000 items (Firefox)
+
+### Integer Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 1.0600 | 3.0000 | 0.0000 |
+| Preallocated For Loop | 0.9900 | 2.0000 | 0.0000 |
+| Reverse For Loop | 0.9900 | 2.0000 | 0.0000 |
+| For Of Loop | 1.6700 | 5.0000 | 0.0000 |
+| Map | 1.2000 | 2.0000 | 0.0000 |
+| Filter | 1.6100 | 3.0000 | 0.0000 |
+| forEach | 1.7800 | 3.0000 | 0.0000 |
+
+### Object Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 1.3500 | 2.0000 | 0.0000 |
+| Preallocated For Loop | 1.3700 | 3.0000 | 0.0000 |
+| Reverse For Loop | 1.2300 | 2.0000 | 0.0000 |
+| For Of Loop | 1.9000 | 3.0000 | 0.0000 |
+| Map | 1.2300 | 2.0000 | 0.0000 |
+| Filter | 1.7800 | 3.0000 | 0.0000 |
+| forEach | 1.9500 | 4.0000 | 0.0000 |
+
+### Global Integer Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 1.0800 | 2.0000 | 0.0000 |
+| Preallocated For Loop | 1.4100 | 3.0000 | 0.0000 |
+| Reverse For Loop | 1.0500 | 2.0000 | 0.0000 |
+| For Of Loop | 1.4900 | 5.0000 | 0.0000 |
+| Map | 1.2000 | 2.0000 | 0.0000 |
+| Filter | 1.6400 | 3.0000 | 0.0000 |
+| forEach | 1.7500 | 3.0000 | 0.0000 |
+
+### Global Object Array
+
+| Type | Average | Max | Min |
+| --- | --- | --- | --- |
+| For Loop | 1.4100 | 3.0000 | 0.0000 |
+| Preallocated For Loop | 1.5700 | 3.0000 | 0.0000 |
+| Reverse For Loop | 1.4800 | 3.0000 | 0.0000 |
+| For Of Loop | 1.9300 | 3.0000 | 1.0000 |
+| Map | 1.3100 | 3.0000 | 0.0000 |
+| Filter | 1.9200 | 3.0000 | 1.0000 |
+| forEach | 1.9000 | 3.0000 | 1.0000 |
