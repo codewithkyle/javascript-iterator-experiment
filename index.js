@@ -390,11 +390,11 @@ function max(arr) {
 function min(arr) {
     return Math.min(...arr);
 }
-console.log("");
-console.log(`# ${runs} runs of ${arrLength} items`);
-console.log("");
-console.log(`### Integer Array`);
 console.log(`
+# ${runs} runs of ${arrLength} items
+
+### Integer Array
+
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
 | For Loop | ${average(forLoopTiming).toFixed(4)} | ${max(forLoopTiming).toFixed(4)} | ${min(forLoopTiming).toFixed(4)} |
@@ -404,10 +404,9 @@ console.log(`
 | Map | ${average(mapTiming).toFixed(4)} | ${max(mapTiming).toFixed(4)} | ${min(mapTiming).toFixed(4)} |
 | Filter | ${average(filterTiming).toFixed(4)} | ${max(filterTiming).toFixed(4)} | ${min(filterTiming).toFixed(4)} |
 | forEach | ${average(forEachTiming).toFixed(4)} | ${max(forEachTiming).toFixed(4)} | ${min(forEachTiming).toFixed(4)} |
-`);
-console.log("");
-console.log(`### Object Array`);
-console.log(`
+
+### Object Array
+
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
 | For Loop | ${average(forLoopObjectTiming).toFixed(4)} | ${max(forLoopObjectTiming).toFixed(4)} | ${min(forLoopObjectTiming).toFixed(4)} |
@@ -417,10 +416,9 @@ console.log(`
 | Map | ${average(mapObjectTiming).toFixed(4)} | ${max(mapObjectTiming).toFixed(4)} | ${min(mapObjectTiming).toFixed(4)} |
 | Filter | ${average(filterObjectTiming).toFixed(4)} | ${max(filterObjectTiming).toFixed(4)} | ${min(filterObjectTiming).toFixed(4)} |
 | forEach | ${average(forEachObjectTiming).toFixed(4)} | ${max(forEachObjectTiming).toFixed(4)} | ${min(forEachObjectTiming).toFixed(4)} |
-`);
-console.log("");
-console.log(`### Global Integer Array`);
-console.log(`
+
+### Global Integer Array
+
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
 | For Loop | ${average(forLoopGlobalTiming).toFixed(4)} | ${max(forLoopGlobalTiming).toFixed(4)} | ${min(forLoopGlobalTiming).toFixed(4)} |
@@ -430,10 +428,9 @@ console.log(`
 | Map | ${average(mapGlobalTiming).toFixed(4)} | ${max(mapGlobalTiming).toFixed(4)} | ${min(mapGlobalTiming).toFixed(4)} |
 | Filter | ${average(filterGlobalTiming).toFixed(4)} | ${max(filterGlobalTiming).toFixed(4)} | ${min(filterGlobalTiming).toFixed(4)} |
 | forEach | ${average(forEachGlobalTiming).toFixed(4)} | ${max(forEachGlobalTiming).toFixed(4)} | ${min(forEachGlobalTiming).toFixed(4)} |
-`);
-console.log("");
-console.log(`### Global Object Array`);
-console.log(`
+
+### Global Object Array
+
 | Type | Average | Max | Min |
 | --- | --- | --- | --- |
 | For Loop | ${average(forLoopGlobalObjectTiming).toFixed(4)} | ${max(forLoopGlobalObjectTiming).toFixed(4)} | ${min(forLoopGlobalObjectTiming).toFixed(4)} |
