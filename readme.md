@@ -362,7 +362,7 @@ My findings:
 | Filter | 22.8034 | 28.9696 | 19.3658 |
 | forEach | 20.2917 | 60.6871 | 17.0919 |
 
-# 100 runs of 100000 items (Chrome v110 on i7-9700F @ 3.00GHz)
+# 100 runs of 100,000 items (Chrome v110 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -413,7 +413,7 @@ My findings:
 | forEach | 1.5340 | 4.1000 | 1.2000 |
 
 
-# 100 runs of 100000 items (Firefox v109 on i7-9700F @ 3.00GHz)
+# 100 runs of 100,000 items (Firefox v109 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -463,7 +463,7 @@ My findings:
 | Filter | 1.9200 | 3.0000 | 1.0000 |
 | forEach | 1.9000 | 3.0000 | 1.0000 |
 
-# 100 runs of 100000 items (Chrome v110 on M1)
+# 100 runs of 100,000 items (Chrome v110 on M1)
 
 ### Integer Array
 
@@ -513,7 +513,7 @@ My findings:
 | Filter | 1.4440 | 2.7000 | 1.3000 |
 | forEach | 1.4410 | 10.9000 | 1.1000 |
 
-# 100 runs of 100000 items (Safari v16.1 on M1)
+# 100 runs of 100,000 items (Safari v16.1 on M1)
 
 ### Integer Array
 
