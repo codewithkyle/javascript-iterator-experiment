@@ -62,7 +62,7 @@ const mapObjectTiming = [];
 const forEachTiming = [];
 const forEachObjectTiming = [];
 const optimizedForLoopTiming = [];
-const optimziedForLoopObjectTiming = [];
+const optimizedForLoopObjectTiming = [];
 
 for (let i = 0; i < intArrays.length; i++){
     const arr = intArrays[i];
@@ -188,7 +188,7 @@ for (let i = 0; i < objectArrays.length; i++){
             }
         }
         const stopTime = performance.now();
-        optimziedForLoopObjectTiming.push(stopTime - startTime);
+        optimizedForLoopObjectTiming.push(stopTime - startTime);
     }
     // Preallocated For Loop
     {
@@ -287,7 +287,7 @@ console.log(`
 | --- | --- | --- | --- | --- |
 | For Loop | ${average(forLoopObjectTiming).toFixed(4)} | ${max(forLoopObjectTiming).toFixed(4)} | ${min(forLoopObjectTiming).toFixed(4)} | ${sum(forLoopObjectTiming).toFixed(4)} |
 | Preallocated For | ${average(preallocatedForLoopObjectTiming).toFixed(4)} | ${max(preallocatedForLoopObjectTiming).toFixed(4)} | ${min(preallocatedForLoopObjectTiming).toFixed(4)} | ${sum(preallocatedForLoopObjectTiming).toFixed(4)} |
-| Optimized For | ${average(optimziedForLoopObjectTiming).toFixed(4)} | ${max(optimizedForLoopObjectTiming).toFixed(4)} | ${min(optimizedForLoopObjectTiming).toFixed(4)} | ${sum(optimizedForLoopObjectTiming).toFixed(4)} |
+| Optimized For | ${average(optimizedForLoopObjectTiming).toFixed(4)} | ${max(optimizedForLoopObjectTiming).toFixed(4)} | ${min(optimizedForLoopObjectTiming).toFixed(4)} | ${sum(optimizedForLoopObjectTiming).toFixed(4)} |
 | Reverse For | ${average(reverseForLoopObjectTiming).toFixed(4)} | ${max(reverseForLoopObjectTiming).toFixed(4)} | ${min(reverseForLoopObjectTiming).toFixed(4)} | ${sum(reverseForLoopObjectTiming).toFixed(4)} |
 | For Of | ${average(forOfLoopObjectTiming).toFixed(4)} | ${max(forOfLoopObjectTiming).toFixed(4)} | ${min(forOfLoopObjectTiming).toFixed(4)} | ${sum(forOfLoopObjectTiming).toFixed(4)} |
 | Map | ${average(mapObjectTiming).toFixed(4)} | ${max(mapObjectTiming).toFixed(4)} | ${min(mapObjectTiming).toFixed(4)} | ${sum(mapObjectTiming).toFixed(4)} |
