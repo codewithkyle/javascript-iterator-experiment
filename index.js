@@ -61,6 +61,8 @@ const mapTiming = [];
 const mapObjectTiming = [];
 const forEachTiming = [];
 const forEachObjectTiming = [];
+const optimizedForLoopTiming = [];
+const optimziedForLoopObjectTiming = [];
 
 for (let i = 0; i < intArrays.length; i++){
     const arr = intArrays[i];
@@ -83,9 +85,21 @@ for (let i = 0; i < intArrays.length; i++){
         const stopTime = performance.now();
         forLoopTiming.push(stopTime - startTime);
     }
+    // Optimzied For Loop
+    {
+        const startTime = performance.now();
+        const res = [];
+        const len = arr.length;
+        for (let i = 0; i < len; i++) {
+            if (arr[i] % 2 === 0) {
+                res.push(arr[i]);
+            }
+        }
+        const stopTime = performance.now();
+        optimizedForLoopTiming.push(stopTime - startTime);
+    }
     // Preallocated For Loop
     {
-        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = new Array(arrLength);
         let index = 0;
@@ -162,6 +176,19 @@ for (let i = 0; i < objectArrays.length; i++){
         }
         const stopTime = performance.now();
         forLoopObjectTiming.push(stopTime - startTime);
+    }
+    // Optimzied For Loop
+    {
+        const startTime = performance.now();
+        const res = [];
+        const len = arr.length;
+        for (let i = 0; i < len; i++) {
+            if (arr[i].age % 2 === 0) {
+                res.push(arr[i]);
+            }
+        }
+        const stopTime = performance.now();
+        optimziedForLoopObjectTiming.push(stopTime - startTime);
     }
     // Preallocated For Loop
     {
@@ -246,23 +273,25 @@ console.log(`
 | Type | Average | Max | Min | Total |
 | --- | --- | --- | --- | --- |
 | For Loop | ${average(forLoopTiming).toFixed(4)} | ${max(forLoopTiming).toFixed(4)} | ${min(forLoopTiming).toFixed(4)} | ${sum(forLoopTiming).toFixed(4)} |
-| Preallocated For Loop | ${average(preallocatedForLoopTiming).toFixed(4)} | ${max(preallocatedForLoopTiming).toFixed(4)} | ${min(preallocatedForLoopTiming).toFixed(4)} | ${sum(preallocatedForLoopTiming).toFixed(4)} |
-| Reverse For Loop | ${average(reverseForLoopTiming).toFixed(4)} | ${max(reverseForLoopTiming).toFixed(4)} | ${min(reverseForLoopTiming).toFixed(4)} | ${sum(reverseForLoopTiming).toFixed(4)} |
-| For Of Loop | ${average(forOfLoopTiming).toFixed(4)} | ${max(forOfLoopTiming).toFixed(4)} | ${min(forOfLoopTiming).toFixed(4)} | ${sum(forOfLoopTiming).toFixed(4)} |
+| Preallocated For | ${average(preallocatedForLoopTiming).toFixed(4)} | ${max(preallocatedForLoopTiming).toFixed(4)} | ${min(preallocatedForLoopTiming).toFixed(4)} | ${sum(preallocatedForLoopTiming).toFixed(4)} |
+| Optimized For | ${average(optimizedForLoopTiming).toFixed(4)} | ${max(optimizedForLoopTiming).toFixed(4)} | ${min(optimizedForLoopTiming).toFixed(4)} | ${sum(optimizedForLoopTiming).toFixed(4)} |
+| Reverse For | ${average(reverseForLoopTiming).toFixed(4)} | ${max(reverseForLoopTiming).toFixed(4)} | ${min(reverseForLoopTiming).toFixed(4)} | ${sum(reverseForLoopTiming).toFixed(4)} |
+| For Of | ${average(forOfLoopTiming).toFixed(4)} | ${max(forOfLoopTiming).toFixed(4)} | ${min(forOfLoopTiming).toFixed(4)} | ${sum(forOfLoopTiming).toFixed(4)} |
 | Map | ${average(mapTiming).toFixed(4)} | ${max(mapTiming).toFixed(4)} | ${min(mapTiming).toFixed(4)} | ${sum(mapTiming).toFixed(4)} |
 | Filter | ${average(filterTiming).toFixed(4)} | ${max(filterTiming).toFixed(4)} | ${min(filterTiming).toFixed(4)} | ${sum(filterTiming).toFixed(4)} |
-| forEach | ${average(forEachTiming).toFixed(4)} | ${max(forEachTiming).toFixed(4)} | ${min(forEachTiming).toFixed(4)} | ${sum(forEachTiming).toFixed(4)} |
+| For Each | ${average(forEachTiming).toFixed(4)} | ${max(forEachTiming).toFixed(4)} | ${min(forEachTiming).toFixed(4)} | ${sum(forEachTiming).toFixed(4)} |
 
 ### Object Array
 
 | Type | Average | Max | Min | Total |
 | --- | --- | --- | --- | --- |
 | For Loop | ${average(forLoopObjectTiming).toFixed(4)} | ${max(forLoopObjectTiming).toFixed(4)} | ${min(forLoopObjectTiming).toFixed(4)} | ${sum(forLoopObjectTiming).toFixed(4)} |
-| Preallocated For Loop | ${average(preallocatedForLoopObjectTiming).toFixed(4)} | ${max(preallocatedForLoopObjectTiming).toFixed(4)} | ${min(preallocatedForLoopObjectTiming).toFixed(4)} | ${sum(preallocatedForLoopObjectTiming).toFixed(4)} |
-| Reverse For Loop | ${average(reverseForLoopObjectTiming).toFixed(4)} | ${max(reverseForLoopObjectTiming).toFixed(4)} | ${min(reverseForLoopObjectTiming).toFixed(4)} | ${sum(reverseForLoopObjectTiming).toFixed(4)} |
-| For Of Loop | ${average(forOfLoopObjectTiming).toFixed(4)} | ${max(forOfLoopObjectTiming).toFixed(4)} | ${min(forOfLoopObjectTiming).toFixed(4)} | ${sum(forOfLoopObjectTiming).toFixed(4)} |
+| Preallocated For | ${average(preallocatedForLoopObjectTiming).toFixed(4)} | ${max(preallocatedForLoopObjectTiming).toFixed(4)} | ${min(preallocatedForLoopObjectTiming).toFixed(4)} | ${sum(preallocatedForLoopObjectTiming).toFixed(4)} |
+| Optimized For | ${average(optimziedForLoopObjectTiming).toFixed(4)} | ${max(optimizedForLoopObjectTiming).toFixed(4)} | ${min(optimizedForLoopObjectTiming).toFixed(4)} | ${sum(optimizedForLoopObjectTiming).toFixed(4)} |
+| Reverse For | ${average(reverseForLoopObjectTiming).toFixed(4)} | ${max(reverseForLoopObjectTiming).toFixed(4)} | ${min(reverseForLoopObjectTiming).toFixed(4)} | ${sum(reverseForLoopObjectTiming).toFixed(4)} |
+| For Of | ${average(forOfLoopObjectTiming).toFixed(4)} | ${max(forOfLoopObjectTiming).toFixed(4)} | ${min(forOfLoopObjectTiming).toFixed(4)} | ${sum(forOfLoopObjectTiming).toFixed(4)} |
 | Map | ${average(mapObjectTiming).toFixed(4)} | ${max(mapObjectTiming).toFixed(4)} | ${min(mapObjectTiming).toFixed(4)} | ${sum(mapObjectTiming).toFixed(4)} |
 | Filter | ${average(filterObjectTiming).toFixed(4)} | ${max(filterObjectTiming).toFixed(4)} | ${min(filterObjectTiming).toFixed(4)} | ${sum(filterObjectTiming).toFixed(4)} |
-| forEach | ${average(forEachObjectTiming).toFixed(4)} | ${max(forEachObjectTiming).toFixed(4)} | ${min(forEachObjectTiming).toFixed(4)} | ${sum(forEachObjectTiming).toFixed(4)} |
+| For Each | ${average(forEachObjectTiming).toFixed(4)} | ${max(forEachObjectTiming).toFixed(4)} | ${min(forEachObjectTiming).toFixed(4)} | ${sum(forEachObjectTiming).toFixed(4)} |
 `);
 
