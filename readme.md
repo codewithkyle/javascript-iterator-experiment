@@ -28,20 +28,19 @@ Types of `for()` loops:
 
 After watching [this talk by Mathias Bynens](https://www.youtube.com/watch?v=m9cTaYI95Zc) and reading through the V8 source code I decided to perform some tests. I wanted to compare average, max, and minimum time for the following:
 
-- Arrays with 100,000 random integers
-- Arrays with 100,000 random objects
-- Static arrays with 100,000 random integers
-- Static arrays with 100,000 random objects
+- Arrays with X random integers
+- Arrays with X random objects
+- Static arrays with X random integers
+- Static arrays with X random objects
 - Preallocated for loop inserts
 
 My findings:
 
-- For loops are 1 to 2 ms faster on average
-- For loops are 2x faster when comparing max timings (to filter)
+- For loops are faster (on average)
+- For loops are faster when comparing max timings (to filter)
 - Preallocated for loops provide the fastest average and min timings
-- For loops are faster (avg & max) on cold starts
 - Map has roughly the same timing as the average for loop when iterating through an array of objects
-- Map consistently has the fastest max timings
+- Map consistently has (one of) the fastest max timings
 - Map consistently has (one of) the slowest min timings
 - For each loops are consistently slow
 
