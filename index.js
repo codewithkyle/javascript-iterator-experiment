@@ -1,5 +1,5 @@
-const runs = +process.argv[2] || 100;
-const arrLength = +process.argv[3] || 100_000;
+const runs = +process?.argv?.[2] ?? 100;
+const arrLength = +process?.argv?.[3] ?? 100_000;
 
 function generateRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
