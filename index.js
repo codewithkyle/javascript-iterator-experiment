@@ -1,5 +1,14 @@
-const runs = +process?.argv?.[2] ?? 100;
-const arrLength = +process?.argv?.[3] ?? 100_000;
+let runs = 100;
+let arrLength = 100_000;
+
+if (process?.argv?.length > 2) {
+    runs = parseInt(process.argv[2]);
+    arrLength = parseInt(process.argv[3]);
+} else if (window?.location?.search) {
+    const params = new URLSearchParams(window.location.search);
+    runs = parseInt(params.get("runs"));
+    arrLength = parseInt(params.get("arrLength"));
+}
 
 function generateRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
