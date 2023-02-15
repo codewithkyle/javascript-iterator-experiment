@@ -66,14 +66,16 @@ const optimizedForLoopObjectTiming = [];
 const preallocatedOptimizedForLoopTiming = [];
 const preallocatedOptimizedForLoopObjectTiming = [];
 
-for (let i = 0; i < intArrays.length; i++){
-    const arr = intArrays[i];
+for (const arr of intArrays){
     // Filter
     {
+        const startMemorySample = await performance.measureUserAgentSpecificMemory();
         const startTime = performance.now();
         const res = arr.filter((item) => item % 2 === 0);
         const stopTime = performance.now();
+        const stopMemorySample = await performance.measureUserAgentSpecificMemory();
         filterTiming.push(stopTime - startTime);
+        console.log(stopMemorySample.bytes - startMemorySample.bytes);
     }
     // For Loop
     {
