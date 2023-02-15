@@ -44,7 +44,7 @@ My findings:
 - Map consistently has (one of) the slowest min timings
 - For each loops are consistently slow
 
-# 100 runs of 10 items
+# 100 runs of 10 items (Node v18.14 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -97,7 +97,7 @@ My findings:
 | Filter | 0.0008 | 0.0082 | 0.0006 |
 | forEach | 0.0015 | 0.0391 | 0.0006 |
 
-# 100 runs of 100 items
+# 100 runs of 100 items (Node v18.14 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -150,7 +150,7 @@ My findings:
 | Filter | 0.0034 | 0.0178 | 0.0028 |
 | forEach | 0.0042 | 0.0667 | 0.0010 |
 
-# 100 runs of 1000 items
+# 100 runs of 1,000 items (Node v18.14 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -203,7 +203,7 @@ My findings:
 | Filter | 0.0190 | 0.1452 | 0.0129 |
 | forEach | 0.0186 | 0.1673 | 0.0112 |
 
-# 100 runs of 10000 items
+# 100 runs of 10,000 items (Node v18.14 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -256,7 +256,7 @@ My findings:
 | Filter | 0.1729 | 1.0994 | 0.1409 |
 | forEach | 0.1518 | 0.9142 | 0.1172 |
 
-# 100 runs of 100000 items
+# 100 runs of 100,000 items (Node v18.14 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -309,7 +309,7 @@ My findings:
 | Filter | 2.0930 | 11.1917 | 1.6245 |
 | forEach | 1.6794 | 8.8432 | 1.4562 |
 
-# 100 runs of 1000000 items
+# 100 runs of 1,000,000 items (Node v18.14 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -362,7 +362,7 @@ My findings:
 | Filter | 22.8034 | 28.9696 | 19.3658 |
 | forEach | 20.2917 | 60.6871 | 17.0919 |
 
-# 100 runs of 100000 items (Chrome)
+# 100 runs of 100000 items (Chrome v110 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -413,7 +413,7 @@ My findings:
 | forEach | 1.5340 | 4.1000 | 1.2000 |
 
 
-# 100 runs of 100000 items (Firefox)
+# 100 runs of 100000 items (Firefox v109 on i7-9700F @ 3.00GHz)
 
 ### Integer Array
 
@@ -463,7 +463,7 @@ My findings:
 | Filter | 1.9200 | 3.0000 | 1.0000 |
 | forEach | 1.9000 | 3.0000 | 1.0000 |
 
-# 100 runs of 100000 items (Chrome M1 Chip)
+# 100 runs of 100000 items (Chrome v110 on M1)
 
 ### Integer Array
 
@@ -513,7 +513,7 @@ My findings:
 | Filter | 1.4440 | 2.7000 | 1.3000 |
 | forEach | 1.4410 | 10.9000 | 1.1000 |
 
-# 100 runs of 100000 items (Safari M1 Chip)
+# 100 runs of 100000 items (Safari v16.1 on M1)
 
 ### Integer Array
 
