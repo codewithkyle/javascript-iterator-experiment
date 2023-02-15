@@ -239,7 +239,7 @@ function sum(arr){
 }
 
 console.log(`
-# ${runs} runs of ${arrLength} items
+# ${Intl.NumberFormat("en-US").format(runs)} runs of ${Intl.NumberFormat("en-US").format(arrLength)} items
 
 ### Integer Array
 
