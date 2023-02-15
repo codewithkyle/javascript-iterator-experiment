@@ -1,4 +1,50 @@
-# Cold Starts
+# Postmortem
+
+`for()` vs `map()` vs `forEach()` vs `filter()`
+
+`map()` and `forEach()` and `filter()` are higher-order functions that provide a more declarative way to loop over arrays, but they also introduce additional overhead such as creating a new array or invoking a callback function on every element. While these overheads may be negligible for small arrays, they can add up when processing large amounts of data.
+
+The other key difference is the ability to `break` out of the loop. Only `for()` loops allow breaking. This can be useful when you only need to locate 1 or more specific values within an array. Since you cannot break out of the higher-order functions the system must evaluate every value within the array even if you've already discovered all desired values.
+
+My general rules for approaching loops:
+
+- Default to `for()` loops
+    - On average they provide the best performance
+    - Preallocate when possible
+    - Easier to reason about when switching between different languages
+- Break when possible.
+- Use `forEach()` when working with a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) (after calling `querySelectorAll()`)
+- Use `map()` when `for()` loops can't be used (such as mapping out data within a [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) string) or when looping through an array of objects
+
+Types of `for()` loops:
+
+`for (let i = 0; i < array.length; i++)`: used to iterate through an array, may break early
+
+`for(let i = array.length - 1; i >= 0; i--)`: used to iterate backwards through an array, may break early, used when you need to drop values from an array
+
+`for (const key in object)`: used to iterate through the keys in an object, may break early
+
+`for (const value of array)`: used to iterate through an array, may break early, iterations can be awaited
+
+After watching [this talk by Mathias Bynens](https://www.youtube.com/watch?v=m9cTaYI95Zc) and reading through the V8 source code I decided to perform some tests. I wanted to compare average, max, and minimum time for the following:
+
+- Arrays with 100,000 random integers
+- Arrays with 100,000 random objects
+- Static arrays with 100,000 random integers
+- Static arrays with 100,000 random objects
+- Preallocated for loop inserts
+
+My findings:
+
+- For loops are 1 to 2 ms faster on average
+- For loops are 2x faster when comparing max timings compared to filter
+- Preallocated for loops provide the fastest average and min timings
+- For loops are faster (avg & max) on cold starts
+- Map has roughly the same timing as the average for loop when iterating through an array of objects
+- Map consistently has the fastest max timings
+- For each loops are consistently slow
+
+## Cold Starts
 
 Int Array
 
@@ -51,7 +97,7 @@ Average Map 1.6030699999816715 Max 2.164900000207126 Min 1.4883000003173947
 Average forEach 1.7796760000102223 Max 9.088599999435246 Min 1.4472000002861023
 ```
 
-# Warm Starts (after 3+ runs)
+## Warm Starts (after 3+ runs)
 
 Int Array
 
