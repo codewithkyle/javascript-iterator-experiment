@@ -63,6 +63,8 @@ const forEachTiming = [];
 const forEachObjectTiming = [];
 const optimizedForLoopTiming = [];
 const optimizedForLoopObjectTiming = [];
+const preallocatedOptimizedForLoopTiming = [];
+const preallocatedOptimizedForLoopObjectTiming = [];
 
 for (let i = 0; i < intArrays.length; i++){
     const arr = intArrays[i];
@@ -111,6 +113,21 @@ for (let i = 0; i < intArrays.length; i++){
         }
         const stopTime = performance.now();
         preallocatedForLoopTiming.push(stopTime - startTime);
+    }
+    // Preallocated Optimized For Loop
+    {
+        const startTime = performance.now();
+        const res = new Array(arrLength);
+        let index = 0;
+        const len = arr.length;
+        for (let i = 0; i < len; i++) {
+            if (arr[i] % 2 === 0) {
+                res[index] = arr[i];
+                index++;
+            }
+        }
+        const stopTime = performance.now();
+        preallocatedOptimizedForLoopTiming.push(stopTime - startTime);
     }
     // Reverse For Lopp
     {
@@ -204,6 +221,21 @@ for (let i = 0; i < objectArrays.length; i++){
         const stopTime = performance.now();
         preallocatedForLoopObjectTiming.push(stopTime - startTime);
     }
+    // Preallocated Optimized For Loop
+    {
+        const startTime = performance.now();
+        const res = new Array(arrLength);
+        let index = 0;
+        const len = arr.length;
+        for (let i = 0; i < len; i++) {
+            if (arr[i].age % 2 === 0) {
+                res[index] = arr[i];
+                index++;
+            }
+        }
+        const stopTime = performance.now();
+        preallocatedOptimizedForLoopObjectTiming.push(stopTime - startTime);
+    }
     // Reverse For Loop
     {
         const startTime = performance.now();
@@ -275,6 +307,7 @@ console.log(`
 | For Loop | ${average(forLoopTiming).toFixed(4)} | ${max(forLoopTiming).toFixed(4)} | ${min(forLoopTiming).toFixed(4)} | ${sum(forLoopTiming).toFixed(4)} |
 | Preallocated For | ${average(preallocatedForLoopTiming).toFixed(4)} | ${max(preallocatedForLoopTiming).toFixed(4)} | ${min(preallocatedForLoopTiming).toFixed(4)} | ${sum(preallocatedForLoopTiming).toFixed(4)} |
 | Optimized For | ${average(optimizedForLoopTiming).toFixed(4)} | ${max(optimizedForLoopTiming).toFixed(4)} | ${min(optimizedForLoopTiming).toFixed(4)} | ${sum(optimizedForLoopTiming).toFixed(4)} |
+| Opt & Pre For | ${average(preallocatedOptimizedForLoopTiming).toFixed(4)} | ${max(preallocatedOptimizedForLoopTiming).toFixed(4)} | ${min(preallocatedOptimizedForLoopTiming).toFixed(4)} | ${sum(preallocatedOptimizedForLoopTiming).toFixed(4)} |
 | Reverse For | ${average(reverseForLoopTiming).toFixed(4)} | ${max(reverseForLoopTiming).toFixed(4)} | ${min(reverseForLoopTiming).toFixed(4)} | ${sum(reverseForLoopTiming).toFixed(4)} |
 | For Of | ${average(forOfLoopTiming).toFixed(4)} | ${max(forOfLoopTiming).toFixed(4)} | ${min(forOfLoopTiming).toFixed(4)} | ${sum(forOfLoopTiming).toFixed(4)} |
 | Map | ${average(mapTiming).toFixed(4)} | ${max(mapTiming).toFixed(4)} | ${min(mapTiming).toFixed(4)} | ${sum(mapTiming).toFixed(4)} |
@@ -288,6 +321,7 @@ console.log(`
 | For Loop | ${average(forLoopObjectTiming).toFixed(4)} | ${max(forLoopObjectTiming).toFixed(4)} | ${min(forLoopObjectTiming).toFixed(4)} | ${sum(forLoopObjectTiming).toFixed(4)} |
 | Preallocated For | ${average(preallocatedForLoopObjectTiming).toFixed(4)} | ${max(preallocatedForLoopObjectTiming).toFixed(4)} | ${min(preallocatedForLoopObjectTiming).toFixed(4)} | ${sum(preallocatedForLoopObjectTiming).toFixed(4)} |
 | Optimized For | ${average(optimizedForLoopObjectTiming).toFixed(4)} | ${max(optimizedForLoopObjectTiming).toFixed(4)} | ${min(optimizedForLoopObjectTiming).toFixed(4)} | ${sum(optimizedForLoopObjectTiming).toFixed(4)} |
+| Opt & Pre For | ${average(preallocatedOptimizedForLoopObjectTiming).toFixed(4)} | ${max(preallocatedOptimizedForLoopObjectTiming).toFixed(4)} | ${min(preallocatedOptimizedForLoopObjectTiming).toFixed(4)} | ${sum(preallocatedOptimizedForLoopObjectTiming).toFixed(4)} |
 | Reverse For | ${average(reverseForLoopObjectTiming).toFixed(4)} | ${max(reverseForLoopObjectTiming).toFixed(4)} | ${min(reverseForLoopObjectTiming).toFixed(4)} | ${sum(reverseForLoopObjectTiming).toFixed(4)} |
 | For Of | ${average(forOfLoopObjectTiming).toFixed(4)} | ${max(forOfLoopObjectTiming).toFixed(4)} | ${min(forOfLoopObjectTiming).toFixed(4)} | ${sum(forOfLoopObjectTiming).toFixed(4)} |
 | Map | ${average(mapObjectTiming).toFixed(4)} | ${max(mapObjectTiming).toFixed(4)} | ${min(mapObjectTiming).toFixed(4)} | ${sum(mapObjectTiming).toFixed(4)} |
