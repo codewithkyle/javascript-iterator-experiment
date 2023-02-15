@@ -1,3 +1,6 @@
+const runs = +process.argv[2] || 100;
+const arrLength = +process.argv[3] || 100_000;
+
 function generateRandomInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -22,24 +25,24 @@ function generateRandomIntegerArray(length, min, max) {
   return result;
 }
 
-const globalIntegerArray = generateRandomIntegerArray(100_000, 0, 100_000);
-const globalObjectArray = generateRandomObjectArray(100_000, 0, 100_000);
+const globalIntegerArray = generateRandomIntegerArray(arrLength, 0, 100_000);
+const globalObjectArray = generateRandomObjectArray(arrLength, 0, 100_000);
 
 console.log("Filter");
 const filterTiming = [];
 const filterObjectTiming = [];
 const filterGlobalTiming = [];
 const filterGlobalObjectTiming = [];
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < runs; i++){
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = arr.filter((item) => item % 2 === 0);
         const stopTime = performance.now();
         filterTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = arr.filter((item) => item.age % 2 === 0);
         const stopTime = performance.now();
@@ -66,9 +69,9 @@ const forLoopGlobalTiming = [];
 const forLoopGlobalObjectTiming = [];
 const forLoopMaxTiming = [];
 const forLoopMaxObjectTiming = [];
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < runs; i++){
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         for (let i = 0; i < arr.length; i++) {
@@ -80,7 +83,7 @@ for (let i = 0; i < 100; i++){
         forLoopTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         for (let i = 0; i < arr.length; i++) {
@@ -114,9 +117,9 @@ for (let i = 0; i < 100; i++){
         forLoopGlobalObjectTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
-        const res = new Array(100_000);
+        const res = new Array(arrLength);
         let index = 0;
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] % 2 === 0) {
@@ -128,9 +131,9 @@ for (let i = 0; i < 100; i++){
         forLoopMaxTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
-        const res = new Array(100_000);
+        const res = new Array(arrLength);
         let index = 0;
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].age % 2 === 0) {
@@ -148,9 +151,9 @@ const reverseForLoopTiming = [];
 const reverseForLoopObjectTiming = [];
 const reverseForLoopGlobalTiming = [];
 const reverseForLoopGlobalObjectTiming = [];
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < runs; i++){
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         for (let i = arr.length - 1; i >= 0; i--) {
@@ -162,7 +165,7 @@ for (let i = 0; i < 100; i++){
         reverseForLoopTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         for (let i = arr.length - 1; i >= 0; i--) {
@@ -202,9 +205,9 @@ const forOfLoopTiming = [];
 const forOfLoopObjectTiming = [];
 const forOfLoopGlobalTiming = [];
 const forOfLoopGlobalObjectTiming = [];
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < runs; i++){
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         for (const item of arr) {
@@ -216,7 +219,7 @@ for (let i = 0; i < 100; i++){
         forOfLoopTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         for (const item of arr) {
@@ -256,16 +259,16 @@ const mapTiming = [];
 const mapObjectTiming = [];
 const mapGlobalTiming = [];
 const mapGlobalObjectTiming = [];
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < runs; i++){
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = arr.map((item) => item % 2 === 0);
         const stopTime = performance.now();
         mapTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = arr.map((item) => item.age % 2 === 0);
         const stopTime = performance.now();
@@ -290,9 +293,9 @@ const forEachTiming = [];
 const forEachObjectTiming = [];
 const forEachGlobalTiming = [];
 const forEachGlobalObjectTiming = [];
-for (let i = 0; i < 100; i++){
+for (let i = 0; i < runs; i++){
     {
-        const arr = generateRandomIntegerArray(100_000, 0, 100_000);
+        const arr = generateRandomIntegerArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         arr.forEach((item) => {
@@ -304,7 +307,7 @@ for (let i = 0; i < 100; i++){
         forEachTiming.push(stopTime - startTime);
     }
     {
-        const arr = generateRandomObjectArray(100_000, 0, 100_000);
+        const arr = generateRandomObjectArray(arrLength, 0, 100_000);
         const startTime = performance.now();
         const res = [];
         arr.forEach((item) => {
